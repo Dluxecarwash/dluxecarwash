@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión - D'luxe Car Wash</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="login-box">
+            <h2>Iniciar Sesión</h2>
+            <input type="password" id="password" placeholder="Clave de acceso">
+            <button onclick="validatePassword()">Ingresar</button>
+            <p class="error" id="error-message">Clave incorrecta. Intenta de nuevo.</p>
+        </div>
+    </div>
+
+    <script>
+        function validatePassword() {
+            const correctPassword = "dluxe163"; // La clave correcta
+            const inputPassword = document.getElementById("password").value;
+            const errorMessage = document.getElementById("error-message");
+
+            if (inputPassword === correctPassword) {
+                localStorage.setItem('dLuxePassword', inputPassword); // Almacenar la clave en localStorage
+                window.location.href = "index.html"; // Redirigir a la página principal
+            } else {
+                errorMessage.style.display = "block"; // Mostrar mensaje de error
+            }
+        }
+    </script>
+
+</body>
+</html>

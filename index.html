@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión - D'luxe Car Wash</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <h2>Iniciar Sesión</h2>
+            <input type="password" id="password" placeholder="Clave de acceso">
+            <button onclick="validatePassword()">Ingresar</button>
+            <p class="error" id="error-message">Clave incorrecta. Intenta de nuevo.</p>
+        </div>
+    </div>
+
+    <script>
+        // Detectar "Enter" en el campo de contraseña y ejecutar validación
+        document.getElementById("password").addEventListener("keyup", function(event) {
+            if (event.key === "Enter") {
+                validatePassword();
+            }
+        });
+
+        function validatePassword() {
+            const correctPassword = "dluxe163"; // La clave correcta
+            const inputPassword = document.getElementById("password").value;
+            const errorMessage = document.getElementById("error-message");
+
+            if (inputPassword === correctPassword) {
+                localStorage.setItem('dLuxePassword', inputPassword); // Almacenar la clave en localStorage
+                window.location.href = "home.html"; // Redirigir a la página principal
+            } else {
+                errorMessage.style.display = "block"; // Mostrar mensaje de error
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        .container {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #2A3E52, #E91E63, #FFEB3B);
+            background-size: 400% 400%;
+            animation: gradient 10s ease infinite;
+        }
+
+        .login-box {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            width: 300px;
+        }
+
+        .login-box h2 {
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .login-box input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .login-box button {
+            width: 100%;
+            padding: 10px;
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .login-box button:hover {
+            background-color: #E91E63;
+            transition: 0.3s;
+        }
+
+        .error {
+            color: red;
+            display: none;
+            margin-top: 1rem;
+        }
+    </style>
+</body>
+</html>

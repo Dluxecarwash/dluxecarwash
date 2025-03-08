@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D'luxe Car Wash - Sistema Madre</title>
+    <link rel="stylesheet" href="styles-home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        // Verificar sesión
+        function checkSession() {
+            const password = localStorage.getItem('dLuxePassword');
+            if (!password || password !== "dluxe163") {
+                window.location.href = "index.html";
+            }
+        }
+
+        // Verificación de contraseña por sucursal
+        const sucursales = {
+            "CONCORDIA": "CONCORDIA27",
+            "NEXXUS": "NEXXUS66",
+            "RÓMULO GARZA": "ROMULO14",
+            "REPÚBLICA MEXICANA": "REPUBLICA01",
+            "JUÁREZ": "JUAREZ78",
+            "PUERTA DE HIERRO": "PH99",
+            "DEL LAGO": "LAGO31",
+            "CENTRIKA": "CENTRIKA45",
+            "REVOLUCIÓN": "REVOLUCION19",
+            "CUMBRES": "CUMBRES55",
+            "VALLE": "VALLE86",
+            "HUINALÁ": "HUINALA41",
+            "TELÉFONOS": "TELEFONOS33",
+            "MONTECARLO": "MONTECARLO16"
+        };
+
+        function verificarAcceso(nombre, url) {
+            const input = prompt(`Ingresa la contraseña para ${nombre}:`);
+            if (input === sucursales[nombre]) {
+                window.open(url, '_blank');
+            } else {
+                alert('Contraseña incorrecta.');
+            }
+        }
+
+        window.onload = checkSession;
+    </script>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo D'luxe Car Wash" style="height: 60px; vertical-align: middle;">
+        <nav>
+            <ul>
+                <li><a href="#manual">Manual de Procedimientos</a></li>
+                <li><a href="#organigrama">Organigrama</a></li>
+                <li><a href="#capacitacion">Capacitación</a></li>
+                <li><a href="#nomina">Nómina</a></li>
+                <li><a href="#almacén">Almacén</a></li>
+                <li><a href="#accidentes">Accidentes</a></li>
+                <li><a href="https://mega.nz/folder/6UBgxQxS#zxC8N8A63aKrqjReVzxf9w" target="_blank">Documentos</a></li>
+                <li><a href="https://dluxecarwash.github.io/motor/" target="_blank">ID</a></li>
+                <li><a href="https://dluxecarwash.github.io/software/" target="_blank">SOFTWARE</a></li>
+                <li><a href="https://dluxecarwash.github.io/MatriData-R-1/" target="_blank">MatriData R-1</a></li>
+                <li><a href="https://dluxecarwash.github.io/MatriData-R-2/" target="_blank">MatriData R-2</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="bienvenida">
+        <h2>Bienvenido a NOVA</h2>
+        <p>Encuentra aquí todos los recursos necesarios para un funcionamiento eficiente de D'luxe Car Wash.</p>
+    </section>
+
+    <section id="manual">
+        <h2>Manual de Procedimientos</h2>
+        <p>Aquí encontrarás el manual de procedimientos actualizado.</p>
+        <a href="https://mega.nz/file/2ZY1layJ#rQOPVCo9qmeYkkogJk0SJHRcilsWMYGdLiORzk4etas" class="btn"><i class="fas fa-file-download"></i> Descargar Manual</a>
+    </section>
+
+    <section id="organigrama">
+        <h2>Organigrama</h2>
+        <p>Consulta nuestro organigrama para entender la estructura organizacional.</p>
+        <a href="organigrama.pdf" class="btn"><i class="fas fa-file-download"></i> Descargar Organigrama</a>
+    </section>
+
+    <section id="capacitacion">
+        <h2>Capacitación</h2>
+        <p>Información sobre los programas de capacitación disponibles.</p>
+        <a href="capacitacion.pdf" class="btn"><i class="fas fa-file-alt"></i> Ver Programas</a>
+    </section>
+
+    <section id="nomina">
+        <h2>Nómina</h2>
+        <p>Información sobre la nómina de empleados.</p>
+        <a href="https://docs.google.com/spreadsheets/d/1aS-FGYzHsU3Z97BYl0ZWi0tFyTzIDKuZbFe6KA7w8WE/edit?usp=sharing" class="btn"><i class="fas fa-file-alt"></i> Ver Nómina</a>
+    </section>
+
+    <section id="almacén">
+        <h2>Almacén</h2>
+        <p>Proceso de almacén y formularios necesarios.</p>
+        <a href="almacén.pdf" class="btn"><i class="fas fa-file-alt"></i> Ver Almacén</a>
+    </section>
+
+    <section id="accidentes">
+        <h2>Accidentes</h2>
+        <p>Procedimientos a seguir en caso de accidentes.</p>
+        <a href="procedimiento_accidentes.pdf" class="btn"><i class="fas fa-file-alt"></i> Ver Procedimiento</a>
+    </section>
+
+    <section id="sucursales">
+        <h2>Sucursales</h2>
+        <ul>
+            <li><a href="#" onclick="verificarAcceso('CONCORDIA', 'https://docs.google.com/spreadsheets/d/1gaGcuWIxt48ZOSn1SyG74VwLpjomK-Ssawywan0u6PY/edit?usp=sharing')">CONCORDIA</a></li>
+            <li><a href="#" onclick="verificarAcceso('NEXXUS', 'https://docs.google.com/spreadsheets/d/1e8myA1jFSX2Yo0kx8vv-qy6FBpuLStA57YGF8uxPhQk/edit?usp=sharing')">NEXXUS</a></li>
+            <li><a href="#" onclick="verificarAcceso('RÓMULO GARZA', 'https://docs.google.com/spreadsheets/d/1h8MAJmp9zz1ME7s-pdfUdWBRPWHUKSqWJAZHXY2CzOI/edit?usp=sharing')">RÓMULO GARZA</a></li>
+            <li><a href="#" onclick="verificarAcceso('REPÚBLICA MEXICANA', 'https://docs.google.com/spreadsheets/d/1G7KekZkPOXfR02zM9pof_o1Yfgp7clQUBhevSR4-FkQ/edit?usp=sharing')">REPÚBLICA MEXICANA</a></li>
+            <li><a href="#" onclick="verificarAcceso('JUÁREZ', 'https://docs.google.com/spreadsheets/d/17j4fd3uyRhI-dI0RHqPVphQB0soJXUsHGwO9OWzJcfY/edit?usp=sharing')">JUÁREZ</a></li>
+            <li><a href="#" onclick="verificarAcceso('PUERTA DE HIERRO', 'https://docs.google.com/spreadsheets/d/177C4JJm25JNEK7lWJLlOgdo-vka6SmkdmqB02Qb9DNM/edit?usp=sharing')">PUERTA DE HIERRO</a></li>
+            <li><a href="#" onclick="verificarAcceso('DEL LAGO', 'https://docs.google.com/spreadsheets/d/1FSxUhzbHdvOJJZMH5NdQuvqTRUGLVnWhT-_V3cfqH5Q/edit?usp=sharing')">DEL LAGO</a></li>
+            <li><a href="#" onclick="verificarAcceso('CENTRIKA', 'https://docs.google.com/spreadsheets/d/1TxG0clJcYIDGcMU07O2RQ1HwWuuVxeDBftBakryRRkA/edit?usp=sharing')">CENTRIKA</a></li>
+            <li><a href="#" onclick="verificarAcceso('REVOLUCIÓN', 'https://docs.google.com/spreadsheets/d/1xS7UORcn27TAJHyO-bILuFk6Owz5hTRaQ4pviXQVSDQ/edit?usp=sharing')">REVOLUCIÓN</a></li>
+            <li><a href="#" onclick="verificarAcceso('CUMBRES', 'https://docs.google.com/spreadsheets/d/1oPr8kddFqeypEyEO8WeaZcwv5EnyH97ZgCTQp7xElhw/edit?usp=sharing')">CUMBRES</a></li>
+            <li><a href="#" onclick="verificarAcceso('VALLE', 'https://docs.google.com/spreadsheets/d/1fGQ3GcttjNwzszOPYprr5Ir44j4L1O8vwAhtowhLp20/edit?usp=sharing')">VALLE</a></li>
+            <li><a href="#" onclick="verificarAcceso('HUINALÁ', 'https://docs.google.com/spreadsheets/d/1UTb9-ThbsTGn-dqSKBCRvgLmwpNZuDEXWR7jAcIwtRA/edit?usp=sharing')">HUINALÁ</a></li>
+            <li><a href="#" onclick="verificarAcceso('TELÉFONOS', 'https://docs.google.com/spreadsheets/d/1_4z1AEO5AVUJTmcV-ywf3ozcCWVL5niuiZbefT6HH1E/edit?usp=sharing')">TELÉFONOS</a></li>
+            <li><a href="#" onclick="verificarAcceso('MONTECARLO', 'https://docs.google.com/spreadsheets/d/1Un4ADaUhRuAsR7qXmytYOAYU13WJ43EAwVdXnzJVA3s/edit?gid=0#gid=0')">MONTECARLO</a></li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 D'luxe Car Wash - Todos los derechos reservados</p>
+    </footer>
+
+</body>
+</html>
